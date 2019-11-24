@@ -1,0 +1,38 @@
+
+\paragraph{Question 21}
+Pseudo code de la fonction mot\_gaps :
+\begin{lstlisting}
+mot_gaps(k):
+    res <- ""
+    pour i allant de 0 a k-1 faire:
+        res <- res + "-"
+    retourne res
+\end{lstlisting}
+\paragraph{Question 22}
+Pseudo code de la fonction align\_lettre\_mot :
+\begin{lstlisting}
+align_lettre_mot(lettre, mot):
+    i <- 0
+    tant que lettre != mot[i] et i < mot.taille:
+        i <- i + 1
+    si i < mot.taille :
+    alors :
+        x <- mot_gaps(i) + lettre + mot_gaps(mot.taille - i - 1)
+    sinon:
+        mot <- mot + "-"
+        lettre <- mot_gaps(mot.taille) + lettre
+    retourne(lettre,mot)
+
+\end{lstlisting}
+
+\paragraph{Question 23}
+\paragraph{Question 24}
+\paragraph{Question 25}
+\paragraph{Question 26}
+\paragraph{Question 27}
+\paragraph{Question 28}
+\paragraph{Tâche D}
+\paragraph{Question 29}
+\paragraph{Question 30}
+\paragraph{Question 31}
+\paragraph{Question 32}
