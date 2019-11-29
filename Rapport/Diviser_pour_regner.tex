@@ -1,6 +1,6 @@
 
 \paragraph{Question 21}
-Pseudo code de la fonction mot\_gaps :
+Pseudo-code de la fonction mot\_gaps :
 \begin{lstlisting}
 mot_gaps(k):
     res <- ""
@@ -9,14 +9,13 @@ mot_gaps(k):
     retourne res
 \end{lstlisting}
 \paragraph{Question 22}
-Pseudo code de la fonction align\_lettre\_mot :
+Pseudo-code de la fonction align\_lettre\_mot :
 \begin{lstlisting}
 align_lettre_mot(lettre, mot):
     i <- 0
     tant que lettre != mot[i] et i < mot.taille:
         i <- i + 1
-    si i < mot.taille :
-    alors :
+    si i < mot.taille alors:
         x <- mot_gaps(i) + lettre + mot_gaps(mot.taille - i - 1)
     sinon:
         mot <- mot + "-"
@@ -27,12 +26,55 @@ align_lettre_mot(lettre, mot):
 
 \paragraph{Question 23}
 \paragraph{Question 24}
+Pseudo-code de la fonction SOL\_2 en considérant que l'on possède une fonction coupure
+\begin{lstlisting}
+SOL_2(x, y):
+    si y.taille == 0 alors:
+        retourne (x,mot_gaps(x.taille))
+    si x.taille == 1 et si y.taille == 1 alors:
+        si x == y alors :
+            retourne (x,y)
+        sinon retourne (x+"-", "-"+y)
+    sinon:
+        res1 <- SOL_2(x[:x.taille/2],y[:coupure(x,y)])
+        res2 <- SOL_2(x[x.taille/2:],y[coupure(x,y:)])
+        retourne (res1[0]+res2[0], res1[1]+res2[1])
+\end{lstlisting}
 \paragraph{Question 25}
+Pseudo-code de la fonction coupure :
+\begin{lstlisting}
+coupure (x, y, T) :
+    n <- len(x)+1
+    m <- len(y)+1
+    p <- (n-1)//2
+    I <- np.zeros((n, m))
+    i <- 1
+    j <- 1
+
+    pour i allant de 1 a n faire:
+        pour j allant de 1 a  m faire :
+
+            si (i<p) faire :
+                I[i][j] <- 0
+
+            sinon si (i==p) faire :
+                I[i][j] <- j
+
+            sinon :
+                s <- min (T[i-1][j], T[i][j-1], T[i-1][j-1])
+
+                si (s == T[i-1][j]) faire :
+                    I[i][j] <- I[i-1][j]
+
+                sinon si (s == T[i][j-1]) faire :
+                    I[i][j] <- I[i][j-1]
+
+                sinon si (s == T[i-1][j-1]) faire :
+                    I[i][j] <- I[i-1][j-1]
+    return (I[n-1][m-1])
+\end{lstlisting}
 \paragraph{Question 26}
 \paragraph{Question 27}
 \paragraph{Question 28}
 \paragraph{Tâche D}
 \paragraph{Question 29}
-\paragraph{Question 30}
-\paragraph{Question 31}
-\paragraph{Question 32}

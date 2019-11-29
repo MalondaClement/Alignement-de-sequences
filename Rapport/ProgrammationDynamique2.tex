@@ -1,0 +1,40 @@
+\paragraph{Question 15}.\\
+On a $i > 0$ et $D(i,j) = D(i-1,j)+c_{del}$\\
+Si $\exists(\bar s, \bar t) \in Al^*(i-1,j)+c_{del}$\\
+Montrons alors que $(\bar s.x_i)\in Al^*(i,j)$\\
+$Al^*(i-1,j)$ veut dire qu'il existe un alignement $(\bar s, \bar t)$ de $(x_[1...i-1], y_[1...j])$ tel que $C(\bar s, \bar t) = D(i-1, j)$. Par définition $c_{del}$ est le coût d'une supression qui consiste à encoder un gap dans $\bar y$ pour marquer la supression de la lettre de $x$ qui est parallèle à ce gap dans $\bar y$.
+Par définition on va donc ajouter un élément dans $\bar y$ sans avancer dans le mot $y$ et on parallèle on avance d'une lettre dans x.\\
+On aura donc $D(i-1,j)+c_{del} = D(i,j)$\\
+Donc il existera un alignement $(\bar u, \bar v)$ tel que $C(\bar u, \bar v) = D(i,j)$ avec $\bar u = \bar s.x_i$ et $\bar v = \bar t.-$\\
+Alors on a bien $(\bar s.x, \bar t.-) \in Al^*(i,j)$.
+\paragraph{Question 16}.\\
+\begin{lstlisting}
+SOL_1 (x, y, T) :
+    u <- ""
+    v <- ""
+    n <- x.taille
+    m <- y.taille
+    i <- n
+    j <- m
+
+    tant que  (i >= 1) ou (j >= 1) faire:
+        if (T[i][j]) == (T[i-1][j] + 2) :
+            u <- x[i-1] + u
+            v <- "-" + v
+            i <- i - 1
+
+        sinon si (T[i][j]) == (T[i][j-1] + 2)  faire :
+            u <- "-" + u
+            v <- y[j-1] + v
+            j <- j - 1
+
+        sinon si T[i][j] == (T[i-1][j-1] + c_sub (x[i-1], y[j-1])) faire :
+            u <- x[i-1] + u
+            v <- y[j-1] + v
+            i <- i - 1
+            j <- j - 1
+    retourne (u, v)
+\end{lstlisting}
+\paragraph{Question 17}.\\
+\paragraph{Question 18}.\\
+\paragraph{Tâche B}.\\

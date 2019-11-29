@@ -1,0 +1,55 @@
+On considère $(x,y)\in \sum^* \times \sum^*$ un couple de mots de longueurs respectives $n$ et $m$.
+\paragraph{Question 7}.\\
+On distingue trois cas possible :\begin{itemize}
+\item[-] si $\bar{u}_j =$ - alors $\bar{v_l} = y_j$ car JUSTIFIER
+\item[-] si $\bar{v_l} =$ - alors $\bar{u_l} = x_i$ car JUSTIFIER
+\item[-] si $\bar{u_l} \neq$ - et $\bar{v_l} \neq$ - alors $\bar{v_l} = \bar{u_l}$ car le seul moyen de ne pas avoir de gap en une position l de la liste est que les lettres des deux mots à cette endroit soient les mêmes.
+\end{itemize}
+\paragraph{Question 8}
+$$C(\bar u, \bar v) = C(\bar u_{[1...l-1]}, \bar v_{[1...l-1]}) + \left \{
+    \begin{array}{rcl}
+        c_{ins} si \bar u_l = -\\
+        c_{del} si \bar v_l = -\\
+        c_{sub} sinon
+    \end{array}
+\right.$$
+\paragraph{Question 9}.\\
+Soit $(\bar u, \bar v)$ un alignement de $(x_{[1...i]} ,y_{[1...j]})$\\
+On sait que
+$$
+ \begin{array}{r c l}
+      D(i,j) & = & d(x_{[1...i]} ,y_{[1...j]}) \\
+      D(i,j) & = & min\{\bar u, \bar v\}\\
+   \end{array}
+$$
+\subparagraph*{Dans le cas n\deg1 :}on a $\bar v_l = y_j$ et $\bar u_l = -$, ce qui une insertion. Puis, pour calculer la distance des éléments précédents, nous allons devoir prendre l'élément précédent dans $y$ mais pas dans $x$ car la place $x_i$ est occupé par un gap.
+\subparagraph*{Dans le cas n\deg2 :}on a $\bar u_l = x_i$ et $\bar v_l = -$, ce qui une supression. Puis, pour calculer la distance des éléments précédents, nous allons devoir prendre l'élément précédent dans $x$ mais pas dans $y$ car la place $y_j$ est occupé par un gap.
+\subparagraph*{Dans le cas n\deg3 :}il n'y a aucun gap donc on prendra dans les deux mots les lettres précédentes $x_{[1...i-1]}$ et $y_{[1...j-1]}$.
+
+\paragraph{Question 10}.\\
+ $D(0, 0) = 0$
+\paragraph{Question 11}.\\
+$D(0, j) = m\times c_{ins} $ car pour chaque lettre de y on met un gap dans x\\
+$D(i, 0) = n\times c_{dsl} $ car pour chaque lettre de x on met un gap dans y
+\paragraph{Question 12}.\\
+\begin{lstlisting}
+DIST_1 (x, y) :
+    n <- x.taille + 1
+    m <- y.taille + 1
+    T <- entier[n][m]
+
+    pour i allant de 0 a n faire :
+        pour j allant de 0 a m faire  :
+            si i==0 faire :
+                T[i][j] <- j*2
+
+            sinon si j==0 faire:
+                T[i][j] <- i*2
+            sinon :
+                T[i][j] <- min (T[i-1][j]+2, T[i][j-1] + 2, T[i-1][j-1] + \\
+                cout.c_sub (x[i-1], y[j-1]))
+
+    return (T[n-1][m-1], T)
+\end{lstlisting}
+\paragraph{Question 13}.\\
+\paragraph{Question 14}.\\

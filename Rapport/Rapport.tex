@@ -1,16 +1,18 @@
 \documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\usepackage[french]{babel}
 \usepackage{fullpage}
 \usepackage{color}
 \usepackage[table]{xcolor}
 \usepackage{listings}
 
+\def\deg{\ensuremath{^\circ}}% symbole °
+
 \begin{document}
-\title{Mini-Projet : Alignement de séquences}s
+\title{Mini-Projet : Alignement de séquences \\ LU3IN003 - Sorbonne Université}
 \author{Amann Emmanuelle \& Malonda Clément}
-\date{}
+%\date{}
 \maketitle
 \tableofcontents
 \newpage
@@ -19,13 +21,16 @@
 \input{Question_intro}
 \section{Méthode naïve par énumération}
 \input{Methode_naive_par_enum}
+\newpage
 \section{Programmation dynamique}
 \subsection{pour le calcul de la distance d'édtion}
-%\input{Réponse partie 2.1}
+\input{ProgrammationDynamique1}
 \subsection{pour le calcul d'un alignement optimal}
-%\input{Réponse partie 2.2}
+\input{ProgrammationDynamique2}
+\newpage
 \section{Amélioration de la compléxité spatiale du calcul de la distance}
-%\input{Réponse partie 3}
+\input{AmeliorationComplexiteSpatiale}
+\newpage
 \section{Amélioration de la compléxité spatiale du calcul d'un alignement optimal par la méthode "diviser pour régner"}
 \input{Diviser_pour_regner}
 
