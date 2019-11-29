@@ -23,7 +23,7 @@ def DIST_NAIF_REC(x, y, i, j, c, dist):
 
 if __name__=="__main__":
     if(len(sys.argv) != 1):
-        x,y = lectureFichier.LIRE_FICHER_AD(sys.argv[1])
+        x,y = lectureFichier.LIRE_FICHER_ADN(sys.argv[1])
         print(DIST_NAIF(x, y))
     else:
         print("Il faut passer une instance de genome en argument")

@@ -17,18 +17,50 @@ SOL_1 (x, y, T) :
     i <- n
     j <- m
 
-    tant que  (i >= 1) ou (j >= 1) faire:
-        if (T[i][j]) == (T[i-1][j] + 2) :
+    si (n==0) alors :
+        u <- m*"-"
+        v <- y
+        return (u,v)
+    sinon si (m==0) alors :
+        u <- x
+        v <- n*"-"
+        return (u,v)
+
+    tant que (i >= 1) or (j >= 1) faire :
+
+        si (i == 1) alors :
+            u <- x[i-1] + u
+            si (j==1) faire:
+                v <- y[j-1] + v
+                return (u,v)
+            sinon :
+                tant que (j>=1) faire :
+                    u <- "-" + u
+                    v <- y[j-1] + v
+                    j <- j -1
+                v <- y[j-1] + v
+                retourne (u, v)
+
+        sinon si j == 1 alors :
+            v <- y[i-1] + v
+            tant que (i>=1) alors :
+                v <- "-" + v
+                u <- x[i-1] + u
+                i <- i -1
+            u <- u[i-1] + u
+            retourne (u, v)
+
+        sinon si (T[i][j]) == (T[i-1][j] + 2) alors :
             u <- x[i-1] + u
             v <- "-" + v
             i <- i - 1
 
-        sinon si (T[i][j]) == (T[i][j-1] + 2)  faire :
+        sinon si (T[i][j]) == (T[i][j-1] + 2) alors :
             u <- "-" + u
             v <- y[j-1] + v
             j <- j - 1
 
-        sinon si T[i][j] == (T[i-1][j-1] + c_sub (x[i-1], y[j-1])) faire :
+        sinon si T[i][j] == (T[i-1][j-1] + cout.c_sub (x[i-1], yfaire [j-1])) :
             u <- x[i-1] + u
             v <- y[j-1] + v
             i <- i - 1
