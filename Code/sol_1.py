@@ -36,9 +36,9 @@ def SOL_1 (x, y, T) :
 				return (u, v)
 
 		elif (j == 1) and (i>0) :
-			v = y[i-1] + v
+			v = y[j-1] + v
 
-			while (i>=1) :
+			while (i>1) :
 				v = "-" + v
 				u = x[i-1] + u
 				i = i -1

@@ -42,8 +42,8 @@ SOL_1 (x, y, T) :
                 retourne (u, v)
 
         sinon si j == 1 alors :
-            v <- y[i-1] + v
-            tant que (i>=1) alors :
+            v <- y[j-1] + v
+            tant que (i>1) alors :
                 v <- "-" + v
                 u <- x[i-1] + u
                 i <- i -1
