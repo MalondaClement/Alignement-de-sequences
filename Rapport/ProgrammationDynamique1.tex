@@ -1,8 +1,8 @@
 On considère $(x,y)\in \sum^* \times \sum^*$ un couple de mots de longueurs respectives $n$ et $m$.
 \paragraph{Question 7}.\\
 On distingue trois cas possible :\begin{itemize}
-\item[-] si $\bar{u}_j =$ - alors $\bar{v_l} = y_j$ car JUSTIFIER
-\item[-] si $\bar{v_l} =$ - alors $\bar{u_l} = x_i$ car JUSTIFIER
+\item[-] si $\bar{u}_j =$ - alors $\bar{v_l} = y_j$ car par définition il n'est pas possible d'avoir deux gaps face à face dans un alignement.
+\item[-] si $\bar{v_l} =$ - alors $\bar{u_l} = x_i$ car par définition il n'est pas possible d'avoir deux gaps face à face dans un alignement.
 \item[-] si $\bar{u_l} \neq$ - et $\bar{v_l} \neq$ - alors $\bar{v_l} = \bar{u_l}$ car le seul moyen de ne pas avoir de gap en une position l de la liste est que les lettres des deux mots à cette endroit soient les mêmes.
 \end{itemize}
 \paragraph{Question 8}
@@ -27,10 +27,10 @@ $$
 \subparagraph*{Dans le cas n\deg3 :}il n'y a aucun gap donc on prendra dans les deux mots les lettres précédentes $x_{[1...i-1]}$ et $y_{[1...j-1]}$.
 
 \paragraph{Question 10}.\\
- $D(0, 0) = 0$
+ $D(0, 0) = 0$ car les lettres d'un mot sont numérotées de 1 à $n$ avec $n$ la taille du mot, la position $(0,0)$ correspond au mot vide.
 \paragraph{Question 11}.\\
-$D(0, j) = m\times c_{ins} $ car pour chaque lettre de y on met un gap dans x\\
-$D(i, 0) = n\times c_{dsl} $ car pour chaque lettre de x on met un gap dans y
+$D(0, j) = m\times c_{ins} $ l'alignement du mot vide $w$ avec un mot de taille $m$ se fait par l'ajout de $m$ gaps dans $w$ face à chaque lettre\\
+$D(i, 0) = n\times c_{dsl} $ l'alignement du mot vide $w$ avec un mot de taille $n$ se fait par l'ajout de $n$ gaps dans $w$ face à chaque lettre
 \paragraph{Question 12}.\\
 \begin{lstlisting}
 DIST_1 (x, y) :
@@ -47,9 +47,12 @@ DIST_1 (x, y) :
                 T[i][j] <- i*2
             sinon :
                 T[i][j] <- min (T[i-1][j]+2, T[i][j-1] + 2, T[i-1][j-1] + \\
-                cout.c_sub (x[i-1], y[j-1]))
+                c_sub (x[i-1], y[j-1]))
 
     return (T[n-1][m-1], T)
 \end{lstlisting}
+Nous retournons le couple constitué de la distance d'édition et du tableau de toutes les valeurs de $D$ car nous avons besoin de ce tableau dans SOL\_1.
 \paragraph{Question 13}.\\
+L'algorithme DIST\_1 utilise une matrice de taille $n \times m$, sa complexité spatiale est en $O(n\times m)$.
 \paragraph{Question 14}.\\
+L'algorithme DIST\_1 est constitué de deux boucles imbriquées. La boucle intérieure ne fait que des opérations élémentaires en $O(1)$ donc la complexité temporelle est en $O(n\times m)$.
