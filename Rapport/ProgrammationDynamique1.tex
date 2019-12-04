@@ -3,14 +3,14 @@ On considère $(x,y)\in \sum^* \times \sum^*$ un couple de mots de longueurs res
 On distingue trois cas possible :\begin{itemize}
 \item[-] si $\bar{u}_j =$ - alors $\bar{v_l} = y_j$ car par définition il n'est pas possible d'avoir deux gaps face à face dans un alignement.
 \item[-] si $\bar{v_l} =$ - alors $\bar{u_l} = x_i$ car par définition il n'est pas possible d'avoir deux gaps face à face dans un alignement.
-\item[-] si $\bar{u_l} \neq$ - et $\bar{v_l} \neq$ - alors $\bar{v_l} = \bar{u_l}$ car le seul moyen de ne pas avoir de gap en une position l de la liste est que les lettres des deux mots à cette endroit soient les mêmes.
+\item[-] si $\bar{u_l} \neq$ - et $\bar{v_l} \neq$ - alors $\bar{v_l} = \bar{u_l}$ car le seul moyen de ne pas avoir de gap en une position $l$ de la liste est que les lettres des deux mots à cet endroit soient les mêmes.
 \end{itemize}
 \paragraph{Question 8}
 $$C(\bar u, \bar v) = C(\bar u_{[1...l-1]}, \bar v_{[1...l-1]}) + \left \{
     \begin{array}{rcl}
-        c_{ins} si \bar u_l = -\\
-        c_{del} si \bar v_l = -\\
-        c_{sub} sinon
+        c_{ins} \text{ si } \bar u_l = -\\
+        c_{del} \text{ si } \bar v_l = -\\
+        c_{sub} \text{ sinon }
     \end{array}
 \right.$$
 \paragraph{Question 9}.\\
@@ -53,6 +53,6 @@ DIST_1 (x, y) :
 \end{lstlisting}
 Nous retournons le couple constitué de la distance d'édition et du tableau de toutes les valeurs de $D$ car nous avons besoin de ce tableau dans SOL\_1.
 \paragraph{Question 13}.\\
-L'algorithme DIST\_1 utilise une matrice de taille $n \times m$, sa complexité spatiale est en $O(n\times m)$.
+L'algorithme DIST\_1 utilise une matrice de taille $n \times m$, sa complexité spatiale est en $\Theta(n\times m)$.
 \paragraph{Question 14}.\\
 L'algorithme DIST\_1 est constitué de deux boucles imbriquées. La boucle intérieure ne fait que des opérations élémentaires en $O(1)$ donc la complexité temporelle est en $O(n\times m)$.

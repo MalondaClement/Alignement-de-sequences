@@ -1,3 +1,22 @@
 \paragraph{Question 19}
-\paragraph{Question 20}
+\paragraph{Question 20}.\\
+\begin{lstlisting}
+DIST_2 (x, y):
+     n <- x.taille
+     m <- y.taille
+     T[2][m]
+    for i in range (n) :
+         for j in range (m) :
+                 if i== 0:
+                        T[i][j] <- 2*j
+                 if j==0 :
+                        T[i][j] <- 2*i
+                 T[i-1][j] <- T[i][j]
+                 T[i][j] <- min (T[i-1][j] + 2, T[i][j-1]+2, T[i-1][j-1] \\
+                 + cout.c_sub(x(i-1), y(j-1))
+\end{lstlisting}
 \paragraph{Tâche C}
+Nous utiliserons la commande suivant pour utiliser le programme :
+\begin{lstlisting}
+time python3 sol_1_2.py un_instance.adn
+\end{lstlisting}

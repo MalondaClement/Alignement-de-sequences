@@ -68,6 +68,14 @@ SOL_1 (x, y, T) :
     retourne (u, v)
 \end{lstlisting}
 \paragraph{Question 17}.\\
+La résolution du problème ALI, par combinaison des algorithmes DIST\_1 et SOL\_1, se fait avec un complexité en $O(n\times m)$ car chacun des deux algorithmes et que SOL\_1 fait appelle une fois à DIST\_1.
 \paragraph{Question 18}.\\
+La complexité spatiale de DIST\_1 est en $\Theta(n\times m)$ et celle de SOL\_1 est en $O(n+m)$.
+\newpage
 \paragraph{Tâche B}.\\
-\img{Images/mesureB.png}{Courbe de consommation de temps CPU en fonction de}
+Nous utiliserons la commande suivant pour utiliser le programme :
+\begin{lstlisting}
+time python3 sol_1.py un_instance.adn
+\end{lstlisting}
+\img{Images/mesureB.png}{Courbe de consommation de temps (en s) CPU en fonction de la taille |x|}
+

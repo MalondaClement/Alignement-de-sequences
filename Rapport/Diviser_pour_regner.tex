@@ -24,7 +24,26 @@ align_lettre_mot(lettre, mot):
 
 \end{lstlisting}
 
-\paragraph{Question 23}
+\paragraph{Question 23}.\\
+On a les coûts suivants :
+$$c_{ins} = c_{del} = 3 \text{ et } c_{sub} = \left \{
+    \begin{array}{l}
+        0 \text{ si } a = b\\
+        5 \text{ si } a\text{ et }b \text{ sont deux consonnes/voyelles distinctes}\\
+        7 \text{ sinon }
+    \end{array}
+\right.$$
+On a : $x = $ BALLON et $y = $ ROND donc $x^1 = $ BAL, $x^2 = LON$, $y^1 = $ RO et $y^2 = $ ND.
+$$\bar s : B\_A\_L$$
+$$\bar t : \_R\_O\_$$
+$$\bar u : LON\_$$
+$$\bar v : \_\_ND$$
+Les coûts de ces deux alignements sont respectivement de $13$ et $9$, ce qui fait un coût total de $22$.\\
+Or il est possible de faire un autre alignement :
+$$\bar s : \_BALLON\_$$
+$$\bar t : R\_\_\_OND$$
+Le coût de l'alignement si dessus est de $5\times 3 + 5 = 20$ soit un coût inférieur à celui réalisé avec la coupure.
+
 \paragraph{Question 24}
 Pseudo-code de la fonction SOL\_2 en considérant que l'on possède une fonction coupure
 \begin{lstlisting}
@@ -73,8 +92,15 @@ coupure (x, y, T) :
                     I[i][j] <- I[i-1][j-1]
     return (I[n-1][m-1])
 \end{lstlisting}
-\paragraph{Question 26}
-\paragraph{Question 27}
-\paragraph{Question 28}
-\paragraph{Tâche D}
+\paragraph{Question 26}.\\
+La complexité spatiale de la fonction coupure est $\Theta(m)$ car elle utilise un tableau de taille $2\times m$ pour stocker les valeurs $D(i,j)$ données par l'équation de réccurrence et que l'on utilise uniquement un tableau à deux lignes car se sont les seuls utiles au moment du calcul.
+\paragraph{Question 27}.\\
+La complexité spatiale de la fonction SOL\_2 est en $O((n+m)^2)$ car elle utilise deux chaînes de caractères pour stocker solution est utilise des appels récursifs.
+\paragraph{Question 28}.\\
+La complexité temporelle de la fonction coupure est en $O(n\times m)$ car elle parcourt un tableau de taille $2 \times m$ mais celui-ci doit être mis-à-jour et donc parcouru à nouveau jusqu'à un maximum de $n$ fois.
+\paragraph{Tâche D}.\\
+Nous utiliserons la commande suivant pour utiliser le programme :
+\begin{lstlisting}
+time python3 sol_2.py un_instance.adn
+\end{lstlisting}
 \paragraph{Question 29}

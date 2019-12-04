@@ -1,0 +1,59 @@
+Inst_0000010_44.adn
+
+real	0m0.197s
+user	0m0.153s
+sys	0m0.038s
+Inst_0000010_44.adn fait
+Inst_0000010_7.adn
+Traceback (most recent call last):
+  File "sol_1.py", line 1, in <module>
+    import dist
+  File "/Users/ClementMalonda/Desktop/Alignement de séquences/Code/dist.py", line 2, in <module>
+    import numpy as np
+  File "/anaconda3/lib/python3.6/site-packages/numpy/__init__.py", line 158, in <module>
+    from . import add_newdocs
+  File "/anaconda3/lib/python3.6/site-packages/numpy/add_newdocs.py", line 13, in <module>
+    from numpy.lib import add_newdoc
+  File "/anaconda3/lib/python3.6/site-packages/numpy/lib/__init__.py", line 8, in <module>
+    from .type_check import *
+  File "/anaconda3/lib/python3.6/site-packages/numpy/lib/type_check.py", line 11, in <module>
+    import numpy.core.numeric as _nx
+  File "/anaconda3/lib/python3.6/site-packages/numpy/core/__init__.py", line 74, in <module>
+    from numpy.testing import _numpy_tester
+  File "/anaconda3/lib/python3.6/site-packages/numpy/testing/__init__.py", line 10, in <module>
+    from unittest import TestCase
+  File "/anaconda3/lib/python3.6/unittest/__init__.py", line 64, in <module>
+    from .main import TestProgram, main
+  File "/anaconda3/lib/python3.6/unittest/main.py", line 7, in <module>
+    from . import loader, runner
+  File "/anaconda3/lib/python3.6/unittest/runner.py", line 8, in <module>
+    from .signals import registerResult
+  File "/anaconda3/lib/python3.6/unittest/signals.py", line 1, in <module>
+    import signal
+  File "/anaconda3/lib/python3.6/signal.py", line 10, in <module>
+    lambda name:
+  File "/anaconda3/lib/python3.6/enum.py", line 632, in _convert
+    cls = cls(name, members, module=module)
+  File "/anaconda3/lib/python3.6/enum.py", line 293, in __call__
+    return cls._create_(value, names, module=module, qualname=qualname, type=type, start=start)
+  File "/anaconda3/lib/python3.6/enum.py", line 399, in _create_
+    enum_class = metacls.__new__(metacls, class_name, bases, classdict)
+  File "/anaconda3/lib/python3.6/enum.py", line 217, in __new__
+    enum_class._member_names_.append(member_name)
+KeyboardInterrupt
+
+real	0m0.152s
+user	0m0.106s
+sys	0m0.028s
+Inst_0000010_44.adn
+
+real	0m0.178s
+user	0m0.137s
+sys	0m0.036s
+Inst_0000010_44.adn fait
+Inst_0000010_7.adn
+
+real	0m0.200s
+user	0m0.152s
+sys	0m0.040s
+Inst_0000010_7.adn fait
