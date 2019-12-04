@@ -6,8 +6,21 @@
 \usepackage{color}
 \usepackage[table]{xcolor}
 \usepackage{listings}
+\usepackage{graphicx}
 
 \def\deg{\ensuremath{^\circ}}% symbole °
+% insérer une image en fixant la largeur = 0.5 * largeur du document pdf
+\newcommand\img[2]{
+\begin{figure}[!h]
+    \centering
+        \includegraphics[width=0.5\paperwidth]{#1}
+    \caption{#2}
+    \label{img:#1}
+\end{figure}
+}
+%il faut l'utiliser comme ça : \img{image.extension}{légende}
+%Pour la citer, utilier \ref{img:image.extension}
+
 
 \begin{document}
 \title{Mini-Projet : Alignement de séquences \\ LU3IN003 - Sorbonne Université}
